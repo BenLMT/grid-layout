@@ -1,0 +1,68 @@
+.characters {
+    width:70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-areas: 
+        "chef"
+        "butters"
+        "cartman"
+        "kenny"
+        "kyle"
+        "stan"
+        ;
+}
+
+.character{
+    height: 20vh;
+}
+
+.chef{
+    background: url(../images/chef.jpg) center no-repeat;
+    border: 2px solid #23B1A5;
+    grid-area: chef; 
+}
+
+.butters{
+     background: url(../images/butters.png) center no-repeat;
+    border: 2px solid #AAFAFA;
+    grid-area: butters; 
+}
+
+.cartman{
+     background: url(../images/cartman.jpg) center no-repeat;
+    border: 2px solid #23B1A5;
+    grid-area: cartman;
+}
+
+.kenny{
+     background: url(../images/kenny.png) center no-repeat;
+    border: 2px solid #020306;
+    grid-area: kenny;
+}
+
+.kyle{
+     background: url(../images/kyle.png) center no-repeat;
+    border: 2px solid #F8F390;
+    grid-area: kyle; 
+}
+
+.stan{
+     background: url(../images/stan.png) center no-repeat;
+    border: 2px solid #F299BF;
+    grid-area: stan; 
+}
+
+@media (min-width: 360px){
+    .characters {
+    width:70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-template-areas: 
+        "chef chef butters"
+        "cartman kenny kenny"
+        "kyle kyle stan"
+        ;
+}
+}
