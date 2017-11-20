@@ -1,68 +1,336 @@
+html,body{
+    margin:0;
+    padding:0;
+    font-family: helvetica;
+}
+
 .characters {
     width:70vw;
+    padding-top:100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns:  1fr;
+    grid-gap: 20px 5px;
+    grid-auto-rows: minmax(20vh, auto);
     grid-template-areas: 
-        "chef"
-        "butters"
-        "cartman"
-        "kenny"
-        "kyle"
-        "stan"
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f"
         ;
 }
 
+
+/*GESTION DES IMAGES*/
+
+
 .character{
-    height: 20vh;
+    border:1px solid grey;
+     overflow:hidden;
 }
 
-.chef{
+
+
+.character.chef img:hover::before,
+.butters-child:hover::before,
+.cartman-child:hover::before,
+.kenny-child:hover::before,
+.kyle-child:hover::before,
+.stan-child:hover::before{
+content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(52, 73, 94, 0.75);
+}
+
+
+.character.chef img {
+    display: block;
+    width:100%;
+    height:100%;
     background: url(../images/chef.jpg) center no-repeat;
-    border: 2px solid #23B1A5;
-    grid-area: chef; 
+    background-size:contain;
+    transition:0.5s ease;
+    grid-area: a; 
 }
 
-.butters{
-     background: url(../images/butters.png) center no-repeat;
-    border: 2px solid #AAFAFA;
-    grid-area: butters; 
+.chef:hover .character.chef img {
+    transform: scale(1.1);
+    opacity:0.8;
 }
 
-.cartman{
+.character.chef img:hover::after{
+    content:"Le chef";
+    position: relative;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    top: 10vh;
+    width:30%;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #aaaacc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+
+
+.butters-child{
+    width:100%;
+    height:100%;
+    background: url(../images/butters.png) center no-repeat;
+    background-size:contain;
+    transition:0.5s ease;
+    grid-area: b; 
+}
+
+.butters:hover .butters-child{
+    transform: scale(1.1);
+    opacity:0.8;
+}
+
+.butters-child:hover::after{
+    content:"Butters";
+    position: relative;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    top: 10vh;
+    width:30%;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    
+    padding: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    z-index: 1;
+}
+
+
+
+.cartman-child{
+    width: 100%;
+    height:100%;
      background: url(../images/cartman.jpg) center no-repeat;
-    border: 2px solid #23B1A5;
-    grid-area: cartman;
+     background-size:contain;
+    transition:0.5s ease;
+    
+    grid-area: c;
 }
 
-.kenny{
+.cartman:hover .cartman-child{
+    transform: scale(1.1);
+    opacity:0.8;
+}
+
+.cartman-child:hover::after{
+    content:"Cartman";
+    position: relative;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    top: 10vh;
+    width:30%;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #aaaacc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.kenny-child{
+    width: 100%;
+    height:100%;
      background: url(../images/kenny.png) center no-repeat;
-    border: 2px solid #020306;
-    grid-area: kenny;
+     background-size:contain;
+    transition:0.5s ease;
+    
+    grid-area: d;
 }
 
-.kyle{
+.kenny:hover .kenny-child{
+    transform: scale(1.1);
+    opacity:0.8;
+}
+
+.kenny-child:hover::after{
+    content:"Kenny";
+    position: relative;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    top: 10vh;
+    width:30%;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #aaaacc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.kyle-child{
+    width: 100%;
+    height:100%;
      background: url(../images/kyle.png) center no-repeat;
-    border: 2px solid #F8F390;
-    grid-area: kyle; 
+     background-size:contain;
+    transition:0.5s ease;
+   
+    grid-area: e; 
 }
 
-.stan{
+.kyle:hover .kyle-child{
+    transform: scale(1.1);
+    opacity:0.8;
+}
+
+.kyle-child:hover::after{
+    content:"Kyle";
+   position: relative;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    top: 10vh;
+    width:30%;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #aaaacc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.stan-child{
+    width: 100%;
+    height:100%;
      background: url(../images/stan.png) center no-repeat;
-    border: 2px solid #F299BF;
-    grid-area: stan; 
+     background-size:contain;
+    transition:0.5s ease;
+    
+    grid-area: f; 
 }
 
-@media (min-width: 360px){
+.stan:hover .stan-child{
+    transform: scale(1.1);
+    opacity:0.8;
+}
+
+.stan-child:hover::after{
+    content:"Stan";
+    position: relative;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    top: 10vh;
+    width:30%;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #aaaacc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* FIN GESTION IMAGES */
+
+@media screen and (min-width: 360px) and (max-device-width : 768px){
+    .characters {
+    width:70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:  repeat(1, 1fr);
+    grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f"
+        ;
+}
+}
+
+
+@media (min-width: 768px) and (max-device-width : 980px){
+  .characters {
+    width:70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr);
+     grid-auto-rows: minmax(20vh, auto);
+    grid-template-areas: 
+        "a a b"
+        "c d d"
+        "e e f"
+        ;
+}
+}
+
+@media (min-width: 980px) and (max-device-width : 1280px){
     .characters {
     width:70vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
+    grid-auto-rows: minmax(20vh, auto);
     grid-template-areas: 
-        "chef chef butters"
-        "cartman kenny kenny"
-        "kyle kyle stan"
+        "a . b"
+        ". c d"
+        "e f ."
         ;
 }
+}
+
+@media (min-width: 1280px){
+    .characters {
+        width:70vw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns:  repeat(3, 1fr);
+        grid-auto-rows: minmax(20vh, auto);
+    }
+    
+    .chef{
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+    .butters { 
+        grid-column: 2 / 4;
+        grid-row: 1 / 3;
+    }
+    .cartman {
+        grid-column: 1;
+        grid-row: 3 / 5;
+    }
+    .kenny {
+        grid-column: 3;
+        grid-row: 3;
+    }
+    .kyle {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .stan {
+        grid-column: 3;
+        grid-row: 4;
+        }
 }
