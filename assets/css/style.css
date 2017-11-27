@@ -33,7 +33,7 @@ html,body{
 
 
 
-.character.chef img:hover::before,
+.chef-child:hover::before,
 .butters-child:hover::before,
 .cartman-child:hover::before,
 .kenny-child:hover::before,
@@ -49,7 +49,7 @@ content: "";
 }
 
 
-.character.chef img {
+.chef-child{
     display: block;
     width:100%;
     height:100%;
@@ -59,25 +59,25 @@ content: "";
     grid-area: a; 
 }
 
-.chef:hover .character.chef img {
+.chef:hover .chef-child{
     transform: scale(1.1);
     opacity:0.8;
 }
 
-.character.chef img:hover::after{
+.chef-child:hover::after{
     content:"Le chef";
     position: relative;
     display: block;
     text-align:center;
     margin: 0 auto;
-    top: 10vh;
+    transform: translateY(-50%);
+    top: 50%;
     width:30%;
     min-width: 200px;
     border: 1px #aaaaaa solid;
     border-radius: 10px;
-    background-color: #aaaacc;
     padding: 12px;
-    color: #000000;
+    color: white;
     font-size: 14px;
     z-index: 1;
 }
@@ -104,12 +104,12 @@ content: "";
     display: block;
     text-align:center;
     margin: 0 auto;
-    top: 10vh;
+    transform: translateY(-50%);
+    top: 50%;
     width:30%;
     min-width: 200px;
     border: 1px #aaaaaa solid;
     border-radius: 10px;
-    
     padding: 12px;
     color: #ffffff;
     font-size: 14px;
@@ -139,14 +139,14 @@ content: "";
     display: block;
     text-align:center;
     margin: 0 auto;
-    top: 10vh;
+    transform: translateY(-50%);
+    top: 50%;
     width:30%;
     min-width: 200px;
     border: 1px #aaaaaa solid;
     border-radius: 10px;
-    background-color: #aaaacc;
     padding: 12px;
-    color: #000000;
+    color: white;
     font-size: 14px;
     z-index: 1;
 }
@@ -172,14 +172,14 @@ content: "";
     display: block;
     text-align:center;
     margin: 0 auto;
-    top: 10vh;
+    transform: translateY(-50%);
+    top: 50%;
     width:30%;
     min-width: 200px;
     border: 1px #aaaaaa solid;
     border-radius: 10px;
-    background-color: #aaaacc;
     padding: 12px;
-    color: #000000;
+    color: white;
     font-size: 14px;
     z-index: 1;
 }
@@ -205,14 +205,14 @@ content: "";
     display: block;
     text-align:center;
     margin: 0 auto;
-    top: 10vh;
+    transform: translateY(-50%);
+    top: 50%;
     width:30%;
     min-width: 200px;
     border: 1px #aaaaaa solid;
     border-radius: 10px;
-    background-color: #aaaacc;
     padding: 12px;
-    color: #000000;
+    color: white;
     font-size: 14px;
     z-index: 1;
 }
@@ -238,21 +238,21 @@ content: "";
     display: block;
     text-align:center;
     margin: 0 auto;
-    top: 10vh;
+    transform: translateY(-50%);
+    top: 50%;
     width:30%;
     min-width: 200px;
     border: 1px #aaaaaa solid;
     border-radius: 10px;
-    background-color: #aaaacc;
     padding: 12px;
-    color: #000000;
+    color: white;
     font-size: 14px;
     z-index: 1;
 }
 
 /* FIN GESTION IMAGES */
 
-@media screen and (min-width: 360px) and (max-device-width : 768px){
+@media screen and (min-width: 360px){
     .characters {
     width:70vw;
     margin: 0 auto;
@@ -270,35 +270,134 @@ content: "";
 }
 
 
-@media (min-width: 768px) and (max-device-width : 980px){
+@media (min-width: 768px){
   .characters {
     width:70vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
-     grid-auto-rows: minmax(20vh, auto);
-    grid-template-areas: 
-        "a a b"
-        "c d d"
-        "e e f"
-        ;
+    grid-auto-rows: minmax(20vh, auto);
 }
+    .chef{
+        grid-column: 2;
+        grid-row: 1 ;
+    }
+    .butters { 
+        grid-column: 3;
+        grid-row: 1 / 2;
+    }
+    .cartman {
+        grid-column: 0 / 2;
+        grid-row: 2 ;
+    }
+    .kenny {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    .kyle {
+        grid-column: 2 / ;
+        grid-row: 3;
+    }
+    .stan {
+        grid-column: 3;
+        grid-row: 3;
+        }
 }
 
-@media (min-width: 980px) and (max-device-width : 1280px){
+@media (min-width: 980px) {
     .characters {
     width:70vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
     grid-auto-rows: minmax(20vh, auto);
-    grid-template-areas: 
-        "a . b"
-        ". c d"
-        "e f ."
-        ;
+    }
+    .chef{
+        grid-column: 1 / 3;
+        grid-row: 1 ;
+        animation:slide-chef 3s 9s ease forwards
+    }
+    
+     @keyframes slide-chef {
+  from {
+    transform:translateX(0%)
+  }
+
+  to {
+    transform:translateX(51%)
+  }
 }
+    
+    .butters { 
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        animation:slide-kenny 3s 6s ease forwards
+    }
+    
+    .cartman {
+        grid-column: 1;
+        grid-row: 2 / 4;
+        animation:slide-cartman 3s 12s ease forwards;
+    }
+    
+       @keyframes slide-cartman {
+  from {
+    transform:translateY(0%)
+  }
+
+  to {
+    transform:translateY(-52.5%)
+  }
 }
+    
+    .kenny {
+        grid-column: 3;
+        grid-row: 2;
+        animation:slide-kenny 3s 3s ease forwards;
+    }
+    
+    @keyframes slide-kenny {
+  from {
+    transform:translateY(0%)
+  }
+
+  to {
+    transform:translateY(110%)
+  }
+}
+    .kyle {
+        grid-column: 2 / ;
+        grid-row: 2;
+        
+    }
+    
+    @keyframes slide-kyle {
+  from {
+    transform:translateX(0%)
+  }
+
+  to {
+    transform:translateX(102.5%)
+  }
+}
+    .stan {
+        grid-column: 3;
+        grid-row: 3;
+        animation:slide-stan 3s ease forwards;
+        }
+        @keyframes slide-stan {
+  from {
+    transform:translateX(0%)
+  }
+
+  to {
+    transform:translateX(-102%)
+  }
+}
+    
+    
+}
+
 
 @media (min-width: 1280px){
     .characters {
@@ -312,25 +411,198 @@ content: "";
     .chef{
         grid-column: 1 / 2;
         grid-row: 1 / 3;
+        animation-play-state:paused;
     }
     .butters { 
         grid-column: 2 / 4;
         grid-row: 1 / 3;
+        animation-play-state:paused;
     }
     .cartman {
         grid-column: 1;
         grid-row: 3 / 5;
+        animation-play-state:paused;
     }
     .kenny {
         grid-column: 3;
         grid-row: 3;
+        animation:slide-kenny 15s infinite forwards;
     }
+    
+    @keyframes slide-kenny {
+  from {
+    transform:translate(0,0)
+  }
+            
+        8.33%{
+    transform:translate(0,0)
+        }
+        
+        16.66%{
+    transform:translate(0,0)
+        }
+        
+         25%{
+    transform:translate(0,110%)
+        }
+        
+        33.33%{    
+    transform:translate(0,110%)
+        }
+            
+        41.99%{    
+     transform:translate(0,110%)
+        }
+            
+        50%{    
+     transform:translate(-101.5%,110%)
+        }
+            
+        58.33%{    
+    transform:translate(-101.5%,110%)
+        }
+            
+        66.66%{    
+    transform:translate(-101.5%,110%)
+        }
+            
+        75%{    
+    transform:translate(-101.5%,0)
+        }
+            
+        83.33%{    
+    transform:translate(-101.5%,0)
+        }
+            
+        91.66%{    
+    transform:translate(-101.5%,0)
+        }
+    
+
+  to {
+    transform:translate(0,0)
+  }
+}
+    
     .kyle {
         grid-column: 2;
         grid-row: 4;
+        animation:slide-kyle 15s infinite forwards;
     }
+    
+        @keyframes slide-kyle {
+  from {
+    transform:translate(0,0)
+  }
+            
+        8.33%{
+    transform:translate(0,-110%)
+        }
+        
+        16.66%{
+    transform:translate(0,-110%)
+        }
+        
+         25%{
+    transform:translate(0,-110%)
+        }
+        
+        33.33%{    
+    transform:translate(101.5%,-110%)
+        }
+            
+        41.99%{    
+     transform:translate(101.5%,-110%)
+        }
+            
+        50%{    
+     transform:translate(101.5%,-110%)
+        }
+            
+        58.33%{    
+    transform:translate(101.5%,0)
+        }
+            
+        66.66%{    
+    transform:translate(101.5%,0)
+        }
+            
+        75%{    
+    transform:translate(101.5%,0)
+        }
+            
+        83.33%{    
+    transform:translate(0,0)
+        }
+            
+        91.66%{    
+    transform:translate(0,0)
+        }
+    
+
+  to {
+    transform:translate(0,0)
+  }
+}
+    
     .stan {
         grid-column: 3;
         grid-row: 4;
+        animation:slide-stan 15s infinite forwards;
         }
+    
+    @keyframes slide-stan {
+from {
+    transform:translate(0,0)
+  }
+            
+        8.33%{
+    transform:translate(0,0)
+        }
+        
+        16.66%{
+    transform:translate(-101.5%,0)
+        }
+        
+         25%{
+    transform:translate(-101.5%,0)
+        }
+        
+        33.33%{    
+    transform:translate(-101.5%,0%)
+        }
+            
+        41.99%{    
+     transform:translate(-101.5%,-110%)
+        }
+            
+        50%{    
+     transform:translate(-101.5%,-110%)
+        }
+            
+        58.33%{    
+    transform:translate(-101.5,-110%)
+        }
+            
+        66.66%{    
+    transform:translate(0,-110%)
+        }
+            
+        75%{    
+    transform:translate(0,-110%)
+        }
+            
+        83.33%{    
+    transform:translate(0,-110%)
+        }
+            
+        91.66%{    
+    transform:translate(0,0)
+        }
+    
+
+  to {
+    transform:translate(0,0)
+  }
+}
 }
